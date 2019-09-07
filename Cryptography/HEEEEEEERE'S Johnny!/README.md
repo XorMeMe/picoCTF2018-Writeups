@@ -33,23 +33,23 @@ Now we can reuse John with our worldlist:
 >john -show files/ourPasswd
 >
 We now get the following output:
->Warning: detected hash type "sha512crypt", but the string is also recognized as "HMAC-SHA256"
->Use the "--format=HMAC-SHA256" option to force loading these as that type instead
->Warning: detected hash type "sha512crypt", but the string is also recognized as "sha512crypt-opencl"
->Use the "--format=sha512crypt-opencl" option to force loading these as that type instead
->Using default input encoding: UTF-8
->Loaded 1 password hash (sha512crypt, crypt(3) $6$ [SHA512 128/128 SSE2 2x])
->Will run 4 OpenMP threads
->Press 'q' or Ctrl-C to abort, almost any other key for status
->password1        (root)
->1g 0:00:00:02 DONE (2019-09-07 11:33) 0.4807g/s 984.6p/s 984.6c/s 984.6C/s 123456..222222
->Use the "--show" option to display all of the cracked passwords reliably
->Session completed
+>Warning: detected hash type "sha512crypt", but the string is also recognized as "HMAC-SHA256"  
+>Use the "--format=HMAC-SHA256" option to force loading these as that type instead  
+>Warning: detected hash type "sha512crypt", but the string is also recognized as "sha512crypt-opencl"  
+>Use the "--format=sha512crypt-opencl" option to force loading these as that type instead  
+>Using default input encoding: UTF-8  
+>Loaded 1 password hash (sha512crypt, crypt(3) $6$ [SHA512 128/128 SSE2 2x])  
+>Will run 4 OpenMP threads  
+>Press 'q' or Ctrl-C to abort, almost any other key for status  
+>password1        (root)  
+>1g 0:00:00:02 DONE (2019-09-07 11:33) 0.4807g/s 984.6p/s 984.6c/s 984.6C/s 123456..222222  
+>Use the "--show" option to display all of the cracked passwords reliably  
+>Session completed  
 >
 As we can see, the password for the root user is `password1`. Now we have to log in with the right credentials using netcat:
->nc 2018shell.picoctf.com 38860
->Username: root
->Password: password1
->picoCTF{J0hn_1$_R1pp3d_4e5aa29e}
+>nc 2018shell.picoctf.com 38860  
+>Username: root  
+>Password: password1  
+>picoCTF{J0hn_1$_R1pp3d_4e5aa29e}  
 >
 The flag is `picoCTF{J0hn_1$_R1pp3d_4e5aa29e}`!
